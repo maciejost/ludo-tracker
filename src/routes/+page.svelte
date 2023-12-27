@@ -97,8 +97,6 @@
 	}
 
 	section {
-		display: grid;
 		width: 100%;
-		grid-template-columns: repeat(2, 1fr);
 	}
 </style>
