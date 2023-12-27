@@ -1,19 +1,17 @@
-
-
 <script lang="ts">
-	export const prerender = true
+	export const prerender = true;
 
-	import PlayerContainer from '$lib/PlayerContainer.svelte'
+	import PlayerContainer from '$lib/PlayerContainer.svelte';
 
 	export type PowerUps = {
-	[key: 'shield' | 'choose' | 'double'] : number
-	}
+		[key: 'shield' | 'choose' | 'double']: number;
+	};
 
-	export type Player = 'green' | 'red' | 'blue' | 'yellow'
+	export type Player = 'green' | 'red' | 'blue' | 'yellow';
 
 	type Game = {
-		[key in Player]: PowerUps
-	}
+		[key in Player]: PowerUps;
+	};
 
 	const DEFAULT_GAME = {
 		green: {
@@ -36,14 +34,13 @@
 			choose: 0,
 			double: 0
 		}
-	}
+	};
 
-	let game = JSON.parse(JSON.stringify(DEFAULT_GAME)) as Game
+	let game = JSON.parse(JSON.stringify(DEFAULT_GAME)) as Game;
 
 	const updateGame = (player: Player, powerUp: keyof PowerUps, value: number) => {
-
 		if (value < 0) {
-			value = 0
+			value = 0;
 		}
 
 		game = {
@@ -52,18 +49,56 @@
 				...game[player],
 				[powerUp]: value
 			}
-		}
+		};
+	};
 
-		console.log('game', game)
-	}
-
-	const players = ['green', 'red', 'blue', 'yellow']
-
+	const players = ['green', 'red', 'blue', 'yellow'];
 </script>
+
 <main>
 	<h1>Ludo World Tracker</h1>
-	<p>A companion app for <a href="https://www.facebook.com/RealLudoSuperstar/" target="_blank">Ludo World</a> to help you keep track of your opponents powerups.</p>
-	{#each players as player}
-		<PlayerContainer playerColor={player} {game} {updateGame} />
-	{/each}
+	<p>
+		A companion app for <a href="https://www.facebook.com/RealLudoSuperstar/" target="_blank"
+			>Ludo World</a
+		> to help you keep track of your and your opponents powerups.
+	</p>
+	<section>
+		{#each players as player}
+			<PlayerContainer playerColor={player} {game} {updateGame} />
+		{/each}
+	</section>
 </main>
+
+<style>
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		color: white;
+		max-width: calc(100vw - 2rem);
+		margin: 0 auto;
+	}
+
+	a {
+		color: white;
+	}
+
+	h1 {
+		font-size: 2rem;
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+
+	p {
+		margin-top: 0;
+		font-size: 1.5rem;
+		text-align: center;
+	}
+
+	section {
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(2, 1fr);
+	}
+</style>
