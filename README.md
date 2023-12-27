@@ -1,18 +1,5 @@
-# create-svelte
-
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+<h1>Ludo World Tracker</h1>
+	<p>A companion app for <a href="https://www.facebook.com/RealLudoSuperstar/" target="_blank">Ludo World</a> to help you keep track of your opponents powerups.</p>
 
 ## Developing
 
