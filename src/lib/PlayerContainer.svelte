@@ -98,7 +98,6 @@
 		justify-content: space-between;
 	}
 
-
 	button {
 		border: none;
 		border-radius: 0.25rem;
