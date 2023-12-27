@@ -70,6 +70,12 @@
 </main>
 
 <style>
+	@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600&display=swap');
+	:global(body) {
+
+		font-family: 'Barlow Condensed', sans-serif;
+	}
+
 	main {
 		display: flex;
 		flex-direction: column;

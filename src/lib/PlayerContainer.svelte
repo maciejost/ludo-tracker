@@ -17,8 +17,8 @@
 	</h2>
 	<div class="powerups">
 		<div>
+			<p class="amount">{game[playerColor].double}</p>
 			<p>Double throw</p>
-			<p>{game[playerColor].double}</p>
 			<div class="buttons">
 				<button on:click={() => updateGame(playerColor, 'double', game[playerColor].double + 1)}>
 					+1
@@ -32,8 +32,8 @@
 			</div>
 		</div>
 		<div>
+			<p class="amount">{game[playerColor].choose}</p>
 			<p>Choose throw</p>
-			<p>{game[playerColor].choose}</p>
 			<div class="buttons">
 				<button on:click={() => updateGame(playerColor, 'choose', game[playerColor].choose + 1)}>
 					+1
@@ -47,8 +47,8 @@
 			</div>
 		</div>
 		<div>
+			<p class="amount">{game[playerColor].shield}</p>
 			<p>Shield</p>
-			<p>{game[playerColor].shield}</p>
 			<div class="buttons">
 				<button on:click={() => updateGame(playerColor, 'shield', game[playerColor].shield + 1)}>
 					+1
@@ -75,6 +75,18 @@
 	}
 	h2 {
 		margin: 0;
+		margin-bottom: 0.5rem;
+		text-transform: capitalize;
+	}
+
+	p:not(.amount) {
+		margin: 0;
+		margin-bottom: 0.5rem;
+	}
+
+	.amount {
+		font-size: 2rem;
+		margin: 0;
 	}
 
 	.powerups {
@@ -84,5 +96,25 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
+	}
+
+
+	button {
+		border: none;
+		border-radius: 0.25rem;
+		padding: 0.5rem;
+		background: white;
+		color: black;
+		width: 2rem;
+		height: 2rem;
+		font-size: 1rem;
+	}
+
+	button:first-child {
+		margin-right: 0.5rem;
+	}
+
+	button:disabled {
+		opacity: 0.5;
 	}
 </style>
