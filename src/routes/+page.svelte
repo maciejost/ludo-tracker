@@ -1,4 +1,7 @@
+
 <script lang="ts">
+	export const prerender = true
+
 	type PowerUps = {
 	[key: 'shield' | 'choose' | 'double'] : number
 	}
