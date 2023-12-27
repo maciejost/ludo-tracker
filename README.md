@@ -4,7 +4,7 @@
 <a href="https://maciejost.github.io/ludo-tracker/"> GH Pages deployment</a>
 <br>
 
-<p>A companion app for <a href="https://www.facebook.com/RealLudoSuperstar/" target="_blank">Ludo World</a> to help you keep track of your opponents powerups.</p>
+<p>A companion app for <a href="https://www.facebook.com/RealLudoSuperstar/" target="_blank">Ludo World</a> to help you keep track of your opponents powerups. Made to try out the basics of Svelte.</p>
 
 ## Developing
 
